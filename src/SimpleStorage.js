@@ -7,7 +7,6 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
-import Token_ABI from "./configs/ERC20_ABI.json";
 import Storage_ABI from "./configs/Storage_ABI.json";
 
 const useStyles = makeStyles((theme) => ({
@@ -68,15 +67,9 @@ const SimpleStorage = () => {
   const getBalance = async () => {
     // Connect to the network by creating an instance of a new provider
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-    // Create an instance of the ERC-20 token contract
-    const contract = new ethers.Contract(
-      "0x0000000000000000000000000000000000001010",
-      Token_ABI,
-      provider
-    );
 
     // Call the balanceOf() function of the contract to get the user's balance
-    let myBalance = await contract.balanceOf(address);
+    let myBalance = await provider.getBalance(address);
     myBalance = myBalance.toString();
     console.log(myBalance);
     // Format the balance to a number
