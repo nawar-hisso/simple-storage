@@ -1,6 +1,6 @@
 # Simple Storage
 
-This project will explain you the basic of how to deal with the smart contract, how to read write and get your metamask balance.
+This project will explain you the basic of how to deal with the smart contract, how to read, write and get your metamask balance.
 
 ## How to play with it?
 
